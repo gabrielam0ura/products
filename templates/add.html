@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adicionar Produto</title>
+    <link rel="stylesheet" href="/static/css/index.css">
+</head>
+<body>
+    <nav>
+        <img src="/static/img/GABRI3LA.png" alt="logo">
+    </nav>
+    <form action="{{ url_for('add_product') }}" method="POST">
+        <label for="name">Nome:</label>
+        <input type="text" name="name" id="name" required>
+        <label for="description">Descrição:</label>
+        <input type="text" name="description" id="description" required>
+        <label for="value">Valor:</label>
+        <input type="number" name="value" id="value" required>
+        <label for="disponible">Disponível para venda?</label>
+        <select name="disponible" id="disponible" required>
+            <option value="yes">Sim</option>
+            <option value="no">Não</option>
+        </select>
+        <button type="submit">Cadastrar</button>
+    </form>
+</body>
+</html>

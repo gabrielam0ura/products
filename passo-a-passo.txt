@@ -1,0 +1,13 @@
+# criando o ambiente virtual e ativando 
+python -m venv venv 
+venv\Scripts\activate
+
+#instalando as dependências
+pip install -r requirements.txt
+
+# crie o banco localmente
+CREATE DATABASE teste;
+
+# rode a aplicação
+python app.py
+
