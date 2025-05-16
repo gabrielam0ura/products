@@ -65,7 +65,7 @@ form button {
     border: 1px solid #FFF;
     border-radius: 10px;
     cursor: pointer;
-    width: 33%;
+    width: 25%;
     background-color: rgba(255, 255, 255, 0.2);
     padding: 5px;
     margin-left: auto; 
@@ -73,6 +73,23 @@ form button {
 
 form button:hover {
     background-color: transparent;
+}
+
+select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-color: transparent;
+    border: 1px solid #FFF;
+    color: #FFF;
+    border-radius: 5px;
+    padding: 5px;
+    cursor: pointer;
+}
+
+select option {
+    background-color: black;
+    color: #FFF;
 }
 
 /* Listagem */
@@ -94,6 +111,22 @@ th, td {
     text-align: left;
 }
 
+th.acoes,
+td.acoes {
+    width: 1%;
+    white-space: nowrap;
+}
+
 .container img {
     margin: 10px 0;
+}
+
+.action {
+    width: 80px;
+    background-color: transparent;
+    border: 1px solid #FFF;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 0;
+    font-size: 13px;
 }

@@ -4,7 +4,7 @@ Um projeto pessoal para listar e adicionar produtos.
 ## Criando o ambiente virtual e ativando 
 ```bash
 python -m venv venv 
-venv\Scripts\activate
+.venv\Scripts\activate
 ```
 ## Instalando as dependências
 ```bash

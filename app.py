@@ -3,7 +3,7 @@ from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
 
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:senha@localhost:5432/teste'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:011711@localhost:5432/teste'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
@@ -35,6 +35,30 @@ def add_product():
         return redirect(url_for('index'))
     
     return render_template('add.html')
+
+@app.route('/edit/<int:produto_id>', methods=['GET', 'POST'])
+def edit_product(produto_id):
+    produto = Produto.query.get_or_404(produto_id)
+
+    if request.method == 'POST':
+        produto.name = request.form['name']
+        produto.description = request.form['description']
+        produto.value = request.form['value']
+        produto.disponible = request.form['disponible']
+        
+        db.session.commit()
+        return redirect(url_for('index'))
+
+    return render_template('edit.html', produto=produto)
+
+
+@app.route('/delete/<int:produto_id>', methods=['POST'])
+def delete_product(produto_id):
+    produto = Produto.query.get_or_404(produto_id)
+    db.session.delete(produto)
+    db.session.commit()
+    return redirect(url_for('index'))
+
 
 if __name__ == '__main__':
     with app.app_context():
